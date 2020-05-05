@@ -3,7 +3,7 @@ FROM tensorflow/tensorflow:$tfversion
 WORKDIR /tf
 RUN apt-get update && apt-get install -y vim wget tmux
 # Installing nodejs required for jupyterlab plugins
-RUN wget https://deb.nodesource.com/setup_11.x && chmod +x setup_11.x && bash setup_11.x && apt-get install -y nodejs 
+RUN wget https://deb.nodesource.com/setup_12.x && chmod +x setup_12.x && bash setup_12.x && apt-get install -y nodejs 
 # Installing required packages (some are already present in tensorflow distribution)
 RUN pip install --upgrade request scikit-image scikit-learn pandas seaborn tensorflow-probability SimpleITK jupyterlab
 RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager
